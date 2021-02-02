@@ -2,7 +2,7 @@
 using MyCompany.Areas.Admin.Contollers;
 using MyCompany.Domain;
 using MyCompany.Domain.Entities;
-using MyCompany.Service;
+using MyCompany.Servise;
 
 namespace MyCompany.Areas.Admin.Controllers
 {
@@ -27,7 +27,7 @@ namespace MyCompany.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 dataManager.TextFields.SaveTextField(model);
-                return RedirectToAction(nameof(HomeController.Index), nameof(HomeController).CutController());
+                return RedirectToAction(nameof(HomeController.Index), nameof(HomeController));
             }
             return View(model);
         }

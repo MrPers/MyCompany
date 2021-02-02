@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using MyCompany.Areas.Admin.Contollers;
 using MyCompany.Domain;
 using MyCompany.Domain.Entities;
-using MyCompany.Service;
+using MyCompany.Servise;
 
 namespace MyCompany.Areas.Admin.Controllers
 {
@@ -40,7 +40,7 @@ namespace MyCompany.Areas.Admin.Controllers
                     }
                 }
                 dataManager.ServiceItems.SaveServiceItem(model);
-                return RedirectToAction(nameof(HomeController.Index), nameof(HomeController).CutController());
+                return RedirectToAction(nameof(HomeController.Index), nameof(HomeController));
             }
             return View(model);
         }
@@ -49,7 +49,7 @@ namespace MyCompany.Areas.Admin.Controllers
         public IActionResult Delete(Guid id)
         {
             dataManager.ServiceItems.DeleteServiceItem(id);
-            return RedirectToAction(nameof(HomeController.Index), nameof(HomeController).CutController());
+            return RedirectToAction(nameof(HomeController.Index), nameof(HomeController));
         }
     }
 }
